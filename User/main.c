@@ -1,7 +1,7 @@
 //=====================================
 //CMSIS-DAP v2.0 for Bluepill board
 //--------based on x893 source code
-//--------2018-06-27 by RadioOperator
+//--------2018-06-30 by RadioOperator
 //=====================================
 
 #include <stdio.h>
