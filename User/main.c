@@ -1,7 +1,7 @@
 //=====================================
 //CMSIS-DAP v2.0 for Bluepill board
 //--------based on x893 source code
-//--------2018-06-30 by RadioOperator
+//--------2018-07-24 by RadioOperator
 //=====================================
 
 #include <stdio.h>
@@ -30,18 +30,6 @@ void Delayms(uint32_t delay);
 
 extern void PIN_nRESET_OUT(uint8_t bit);
 
-void LedConnectedOut(uint16_t bit);
-void LedRunningOut(uint16_t bit);
-
-extern const UserAppDescriptor_t UserAppDescriptor;
-
-UserAppDescriptor_t * pUserAppDescriptor = NULL;
-
-const CoreDescriptor_t CoreDescriptor = {
-  &LedConnectedOut,
-  &LedRunningOut,
-};
-
 #if (USBD_CDC_ACM_ENABLE == 1)
 extern int32_t USBD_CDC_ACM_PortInitialize(void);
 extern void CDC_ACM_UART_to_USB(void);
@@ -52,7 +40,6 @@ uint8_t u8LedMode = 0;
 
 #define LED_FLASH_ON()    SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk  //turn-on SysTick, LED in flashing mode.
 #define LED_FLASH_OFF()   SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk //turn-off SysTick
-
 
 #if defined ( BLUEPILL ) //Bluepill Board
 
@@ -129,29 +116,6 @@ void LedRunningOut(uint16_t bit)
   }
 }
 
-CoreDescriptor_t * pCoreDescriptor;
-
-void UserAppInit(CoreDescriptor_t *core)
-{
-  pCoreDescriptor = core;
-  DAP_Setup();
-}
-
-void UserAppAbort(void)
-{
-  DAP_TransferAbort = 1;
-}
-
-void UserAppInit(CoreDescriptor_t *core);
-void UserAppAbort(void);
-
-__attribute__((section("USERINIT")))
-const UserAppDescriptor_t UserAppDescriptor = {
-  &UserAppInit,
-  &DAP_ProcessCommand,
-  &UserAppAbort
-};
-
 void SysTick_Init(void)
 {
   SysTick_Config(1800000); // =200ms, 1800000 ticks
@@ -193,6 +157,30 @@ void SysTick_Handler(void)
   }
 }
 
+CoreDescriptor_t * pCoreDescriptor;
+const CoreDescriptor_t CoreDescriptor = {
+  &LedConnectedOut,
+  &LedRunningOut,
+};
+
+void UserAppInit(CoreDescriptor_t *core)
+{
+  pCoreDescriptor = core;
+  DAP_Setup();
+}
+
+void UserAppAbort(void)
+{
+  DAP_TransferAbort = 1;
+}
+
+UserAppDescriptor_t * pUserAppDescriptor = NULL;
+UserAppDescriptor_t UserAppDescriptor = {
+  &UserAppInit,
+  &DAP_ProcessCommand,
+  &UserAppAbort
+};
+
 //=============================================================================
 //==main=======================================================================
 //=============================================================================
@@ -200,7 +188,7 @@ int main(void)
 {
   SystemCoreClockUpdate();
   BoardInit();  
-  SysTick_Init(); //for LED_RUNNING_MASK flash
+  SysTick_Init(); //for LED flash
   
   LedConnectedOn();
   if (UserAppDescriptor.UserInit != NULL)
@@ -577,10 +565,6 @@ void vResetTarget(uint8_t bit)
   RST_Transfer(0x00000CC5, 0xE000ED0C); //set AIRCR address
   for (i=0; i<100; i++);
   RST_Transfer(0x00000CDD, 0x05FA0007); //set RESET data
-  for (i=0; i<100; i++);
-  RST_Transfer(0x00000CC5, 0xE000ED0C); //repeat
-  for (i=0; i<100; i++);
-  RST_Transfer(0x00000CDD, 0x05FA0007);
   for (i=0; i<100; i++);
   RST_Transfer(0x00000CC5, 0xE000ED0C); //repeat
   for (i=0; i<100; i++);

@@ -13,7 +13,4 @@ My contribution is:
 6. Added STLINK_V2A board support (refer to Docs).
 7. Minor changes, e.g. LED handling, project files re-group......
 
-Unsolved issue:
-one compiling Warning on main.c (line 151), but still works fine.
-
 Thanks.
