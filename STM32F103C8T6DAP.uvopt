@@ -1664,7 +1664,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\USB\USB_CM3.lib</PathWithFileName>
+      <PathWithFileName>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</PathWithFileName>
       <FilenameWithoutPath>USB_CM3.lib</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>

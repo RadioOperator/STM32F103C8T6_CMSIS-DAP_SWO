@@ -546,7 +546,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -1092,7 +1092,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -1638,7 +1638,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -2184,7 +2184,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -2730,7 +2730,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -3276,7 +3276,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -3822,7 +3822,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -4368,7 +4368,7 @@
             <File>
               <FileName>USB_CM3.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\USB\USB_CM3.lib</FilePath>
+              <FilePath>C:\Keil\ARM\RV31\LIB\USB_CM3.lib</FilePath>
             </File>
           </Files>
         </Group>
