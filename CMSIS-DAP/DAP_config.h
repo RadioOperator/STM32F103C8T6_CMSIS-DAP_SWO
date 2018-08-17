@@ -55,7 +55,8 @@ typedef const struct
   && !defined ( STLINK_V20    ) \
   && !defined ( STLINK_V21    ) \
   && !defined ( BOARD_STM32RF ) \
-  && !defined ( STLINK_V2A    )
+  && !defined ( STLINK_V2A    ) \
+  && !defined ( STLINK_V2B    )
 #error "Board undefined"
 #endif
 
@@ -91,9 +92,9 @@ Provides definitions about:
 
 /// Indicate that JTAG communication mode is available at the Debug Port.
 /// This information is returned by the command \ref DAP_Info as part of <b>Capabilities</b>.
-#if defined ( BOARD_STM32RF ) \
-  || defined ( STLINK_V20 )   \
-  || defined ( STLINK_V21 )   \
+#if  defined ( BOARD_STM32RF ) \
+  || defined ( STLINK_V20 )    \
+  || defined ( STLINK_V21 )    \
   || defined ( STLINK_V2A )
 #define DAP_JTAG                0       ///< JTAG Mode: 0 = not available, no JTAG pins.
 #else
@@ -186,9 +187,9 @@ typedef enum Pin_e {
 
 // USB Connect Pull-Up
 
-#if   defined ( BLUEPILL )  \
-  ||   defined ( BOARD_V1 )  \
-  ||   defined ( BOARD_V2 )
+#if   defined ( BLUEPILL ) \
+  ||  defined ( BOARD_V1 ) \
+  ||  defined ( BOARD_V2 )
 
 #define PIN_USB_CONNECT_RCC   RCC_APB2ENR_IOPAEN
 #define PIN_USB_CONNECT_PORT  GPIOA
@@ -198,8 +199,9 @@ typedef enum Pin_e {
 #define PIN_USB_CONNECT_ON()  PIN_USB_CONNECT_PORT->BSRR = PIN_USB_CONNECT_MASK
 #define PIN_USB_CONNECT_OFF() PIN_USB_CONNECT_PORT->BRR  = PIN_USB_CONNECT_MASK
 
-#elif defined ( STLINK_V20 ) \
-  ||   defined ( STLINK_V2A )
+#elif  defined ( STLINK_V20 ) \
+  ||   defined ( STLINK_V2A ) \
+  ||   defined ( STLINK_V2B )
 
 #define PIN_USB_CONNECT_ON()
 #define PIN_USB_CONNECT_OFF()
@@ -319,8 +321,8 @@ typedef enum Pin_e {
 #define PIN_nRESET_PORT     GPIOB
 #define PIN_nRESET_PIN      9
 
-#elif defined ( STLINK_V20 )  \
-  || defined ( STLINK_V21 )
+#elif defined ( STLINK_V20 ) \
+   || defined ( STLINK_V21 )
 
 // SWDIO/TMS Pin
 #define PIN_SWDIO_TMS_PORT  GPIOB
@@ -357,7 +359,8 @@ typedef enum Pin_e {
 #define PIN_nRESET_PORT     GPIOB
 #define PIN_nRESET_PIN      9
 
-#elif defined ( STLINK_V2A )
+#elif defined ( STLINK_V2A ) \
+  ||  defined ( STLINK_V2B )
 
 // SWDIO/TMS Pin
 #define PIN_SWDIO_TMS_PORT  GPIOB
@@ -370,6 +373,10 @@ typedef enum Pin_e {
 // TDO/SWO Pin (input)
 #define PIN_TDO_PORT        GPIOA
 #define PIN_TDO_PIN         10
+
+// TDI Pin (output), STLINK_V2B use only
+#define PIN_TDI_PORT        GPIOB
+#define PIN_TDI_PIN         8
 
 // nRESET Pin
 #define PIN_nRESET_PORT     GPIOB
@@ -402,7 +409,8 @@ typedef enum Pin_e {
 #define LED_RUNNING_PIN     12
 
 #elif defined ( STLINK_V20 ) \
-  ||   defined ( STLINK_V2A )
+  ||  defined ( STLINK_V2A ) \
+  ||  defined ( STLINK_V2B )
 
 #define LED_CONNECTED_RCC   RCC_APB2ENR_IOPAEN
 #define LED_RUNNING_RCC     RCC_APB2ENR_IOPAEN
