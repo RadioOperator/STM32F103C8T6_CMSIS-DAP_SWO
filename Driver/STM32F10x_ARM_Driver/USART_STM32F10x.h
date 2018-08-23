@@ -37,15 +37,12 @@
 
 #include "Driver_USART.h"
 
-#if  defined ( STLINK_V20 ) \
-  || defined ( STLINK_V21 ) \
-  || defined ( STLINK_V2A ) \
-  || defined ( STLINK_V2B )
-#include "USART_Config_USART1_noRemap.h" //SWO pin - PA10, STLINK use PA10 only
-#elif defined ( SWO_PB7 )
+#if defined ( SWO_PB7 )
 #include "USART_Config_USART1_Remap.h"   //SWO pin - PB7
+#warning "Use PB7 as SWO port."
 #elif defined ( SWO_PA10 )
 #include "USART_Config_USART1_noRemap.h" //SWO pin - PA10
+#warning "Use PA10 as SWO port."
 #else
 #error "SWO Pin undefined, please define SWO_PA10 or SWO_PB7 for your board."
 #endif

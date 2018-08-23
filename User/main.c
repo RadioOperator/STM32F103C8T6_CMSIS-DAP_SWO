@@ -18,10 +18,19 @@
 
 #if defined ( BLUEPILL )
 #if defined ( SWD_REMAP )
-#warning "BLUEPILL board: using Remapped SWD/SWC port, SWO/TDO-PB7, nRESET-PB6, TDI-PB5"
+#warning "BLUEPILL board: using Remapped SWD/SWC port, TDO-PB7, nRESET-PB6, TDI-PB5"
 #else
-#warning "BLUEPILL board: using SWD/TMS-PB9, SWC/TCK-PB8, SWO/TDO-PB7, nRESET-PB6, TDI-PB5"
+#warning "BLUEPILL board: using SWD/TMS-PB9, SWC/TCK-PB8, TDO-PB7, nRESET-PB6, TDI-PB5"
 #endif
+#endif
+
+#if  defined ( BOARD_STM32RF ) \
+  || defined ( STLINK_V20 )    \
+  || defined ( STLINK_V21 )    \
+  || defined ( STLINK_V2A )
+#warning "SWD mode only, JTAG mode disabled."
+#else
+#warning "SWD mode + JTAG mode"
 #endif
 
 void BoardInit(void);

@@ -6,6 +6,10 @@
 *.ko
 *.obj
 *.elf
+*.crf
+*.dep
+*.htm
+*.lnp
 
 # Linker output
 *.ilk
@@ -17,7 +21,6 @@
 *.pch
 
 # Libraries
-*.lib
 *.a
 *.la
 *.lo
@@ -34,7 +37,6 @@
 *.app
 *.i*86
 *.x86_64
-*.hex
 
 # Debug files
 *.dSYM/

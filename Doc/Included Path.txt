@@ -9,7 +9,6 @@ C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
 C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Driver\Include
 
 
-
 Keil MDK environment:
  
 1. MDK v4.7 or above, ARM-CC 5 or 6
@@ -17,9 +16,6 @@ Keil MDK environment:
 2. ARM RL_USB and RTX required:
    C:\Keil\ARM\RL
    C:\Keil\ARM\RV31
-   If you don't have those RL,RV31 folders, try to get it from Keil v4.7 installed files.
+   If you don't have those RL, RV31 folders, try to get it from Keil v4.7 installed files.
    
 3. ARM CMSIS v5.3.0 or above.
-
-4. USB_CM3.lib file required:
-   If you don't have it in C:\Keil\ARM\RV31\LIB\USB_CM3.lib, try to use attached file in USB_CM3.rar.

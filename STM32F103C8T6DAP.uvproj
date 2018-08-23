@@ -1441,8 +1441,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -1987,8 +1987,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -2533,8 +2533,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -2556,7 +2556,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V20</Define>
+              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V20 SWO_PA10</Define>
               <Undefine></Undefine>
               <IncludePath>.\CMSIS-DAP;.\USB;.\User;.\Driver\STM32F10x_ARM_Driver;.\Driver\STM32F10x_StdPeriph_Driver\inc;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Driver\Include</IncludePath>
             </VariousControls>
@@ -3079,8 +3079,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -3102,7 +3102,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V21</Define>
+              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V21 SWO_PA10</Define>
               <Undefine></Undefine>
               <IncludePath>.\CMSIS-DAP;.\USB;.\User;.\Driver\STM32F10x_ARM_Driver;.\Driver\STM32F10x_StdPeriph_Driver\inc;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Driver\Include</IncludePath>
             </VariousControls>
@@ -3625,7 +3625,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -4171,8 +4171,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -4194,7 +4194,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V2A</Define>
+              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V2A SWO_PA10</Define>
               <Undefine></Undefine>
               <IncludePath>.\CMSIS-DAP;.\USB;.\User;.\Driver\STM32F10x_ARM_Driver;.\Driver\STM32F10x_StdPeriph_Driver\inc;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Driver\Include</IncludePath>
             </VariousControls>
@@ -4717,8 +4717,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -4740,7 +4740,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V2B</Define>
+              <Define>USE_STDPERIPH_DRIVER STM32F10X_MD STLINK_V2B SWO_PA10</Define>
               <Undefine></Undefine>
               <IncludePath>.\CMSIS-DAP;.\USB;.\User;.\Driver\STM32F10x_ARM_Driver;.\Driver\STM32F10x_StdPeriph_Driver\inc;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;C:\Keil\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Driver\Include</IncludePath>
             </VariousControls>
