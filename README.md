@@ -10,7 +10,9 @@ My contribution is:
 3. CDC function improved(USART2).
 4. Added a Soft-Reset function for Cortex-M.
 5. Added BluePill board support, Remapped or unRemap (refer to Docs).
-6. Added STLINK_V2A board support (refer to Docs).
+6. Added STLINK_V2A, STLINK_V2B board support (refer to Docs).
 7. Minor changes, e.g. LED handling, project files re-group......
+
+( *.bin files, converted from Hex, not tested.)
 
 Thanks.
