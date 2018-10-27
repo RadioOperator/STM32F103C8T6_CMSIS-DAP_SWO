@@ -16,6 +16,10 @@ Keil MDK environment:
 2. ARM RL_USB and RTX required:
    C:\Keil\ARM\RL
    C:\Keil\ARM\RV31
-   If you don't have those RL, RV31 folders, try to get it from Keil v4.7 installed files.
    
 3. ARM CMSIS v5.3.0 or above.
+
+4. In your MDK v5.xx, If you don't have those RL, RV31 folders,
+try to install the "MDK v4 Legacy Support" pack. Refer to here:
+http://www2.keil.com/mdk5/legacy
+
