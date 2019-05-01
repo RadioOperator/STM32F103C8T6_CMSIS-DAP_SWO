@@ -370,9 +370,18 @@ typedef enum Pin_e {
 #define PIN_SWCLK_TCK_PORT  GPIOB
 #define PIN_SWCLK_TCK_PIN   13
 
+#if defined ( SWO_PB7 )
+// TDO/SWO Pin (input)
+#define PIN_TDO_PORT        GPIOB    //remap USART1_Rx_Pin to PB7 for SWO
+#define PIN_TDO_PIN         7
+
+#elif defined ( SWO_PA10 )
 // TDO/SWO Pin (input)
 #define PIN_TDO_PORT        GPIOA
 #define PIN_TDO_PIN         10
+#else
+#error "SWO Pin undefined, please define SWO_PA10 or SWO_PB7 for your board."
+#endif
 
 // TDI Pin (output), STLINK_V2B use only
 #define PIN_TDI_PORT        GPIOB
