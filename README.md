@@ -16,3 +16,5 @@ My contribution is:
 ( *.bin files, converted from Hex, not tested.)
 
 Thanks.
+
+![alt text](https://github.com/RadioOperator/STM32F103C8T6_CMSIS-DAP_SWO/blob/master/Doc/Bluepill/1.SWD_Remapped.jpg)
