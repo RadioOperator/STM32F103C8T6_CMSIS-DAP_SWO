@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2017 ARM Limited. All rights reserved.
+ * Copyright (c) 2013-2019 ARM Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -17,7 +17,7 @@
  *
  * ----------------------------------------------------------------------
  *
- * $Date:        1. December 2017
+ * $Date:        26. November 2019
  * $Revision:    V2.0.0
  *
  * Project:      CMSIS-DAP Include
@@ -232,7 +232,6 @@ typedef struct {
 extern          DAP_Data_t DAP_Data;            // DAP Data
 extern volatile uint8_t    DAP_TransferAbort;   // Transfer Abort Flag
 
-
 // Functions
 extern void     SWJ_Sequence    (uint32_t count, const uint8_t *data);
 extern void     SWD_Sequence    (uint32_t info,  const uint8_t *swdo, uint8_t *swdi);
@@ -279,10 +278,11 @@ extern void     DAP_Setup (void);
 #ifndef DELAY_SLOW_CYCLES
 #define DELAY_SLOW_CYCLES       3U      // Number of cycles for one iteration
 #endif
-__STATIC_FORCEINLINE void PIN_DELAY_SLOW (uint32_t delay) {
-  uint32_t count;
 
-  count = delay;
+__STATIC_FORCEINLINE void PIN_DELAY_SLOW (uint32_t delay) {
+  if (delay == 1) return; //speed-up
+  delay >>= 1;            //speed-up
+  volatile uint32_t count = delay;
   while (--count);
 }
 
@@ -292,15 +292,14 @@ __STATIC_FORCEINLINE void PIN_DELAY_SLOW (uint32_t delay) {
 #endif
 __STATIC_FORCEINLINE void PIN_DELAY_FAST (void) {
 #if (DELAY_FAST_CYCLES >= 1U)
-  __nop();
+  __NOP();
 #endif
 #if (DELAY_FAST_CYCLES >= 2U)
-  __nop();
+  __NOP();
 #endif
 #if (DELAY_FAST_CYCLES >= 3U)
-  __nop();
+  __NOP();
 #endif
 }
-
 
 #endif  /* __DAP_H__ */
