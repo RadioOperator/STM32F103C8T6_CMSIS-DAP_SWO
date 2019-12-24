@@ -280,10 +280,13 @@ extern void     DAP_Setup (void);
 #endif
 
 __STATIC_FORCEINLINE void PIN_DELAY_SLOW (uint32_t delay) {
-  if (delay == 1) return; //speed-up
-  delay >>= 1;            //speed-up
-  volatile uint32_t count = delay;
-  while (--count);
+
+__asm  //RadioOperator
+  {
+loop:
+    SUBS delay, delay, 1
+    BNE loop
+  }
 }
 
 // Fixed delay for fast clock generation

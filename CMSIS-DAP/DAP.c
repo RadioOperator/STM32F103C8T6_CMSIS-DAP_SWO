@@ -410,9 +410,14 @@ static uint32_t DAP_SWJ_Clock(const uint8_t *request, uint8_t *response) {
     } else {
       delay  = 1U;
     }
-
-    DAP_Data.clock_delay = delay;
   }
+  
+  if (DAP_Data.debug_port == DAP_PORT_JTAG)
+  {
+    delay += 1; //JTAG mode >=2 //RadioOperator
+  }
+  
+  DAP_Data.clock_delay = delay;
 
   *response = DAP_OK;
 #else
